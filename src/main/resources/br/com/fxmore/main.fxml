@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--prefHeight="457.0" prefWidth="565.0"  -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<GridPane alignment="center" maxWidth="Infinity" maxHeight="Infinity" hgap="2.0" stylesheets="@main.css" vgap="2.0"
+          xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="br.com.fxmore.controll.Controller">
+    <columnConstraints>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="50" prefHeight="50" minHeight="50"/>
+        <RowConstraints/>
+    </rowConstraints>
+    <children>
+        <ToolBar GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <items>
+                <Button mnemonicParsing="false" text="Novo" onMouseClicked="#limpar"/>
+                <Button mnemonicParsing="false" text="Salvar" onMouseClicked="#save"/>
+                <Button mnemonicParsing="false" text="Abrir" onMouseClicked="#open"/>
+                <ImageView fx:id="textButtom" fitHeight="30.0" fitWidth="100.0" onDragDetected="#textDragDetect"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/btTexto.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="labelButtom" fitHeight="30.0" fitWidth="100.0" onDragDetected="#textDragDetect"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/btLabel.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="imageButtom" fitHeight="30.0" fitWidth="100.0" onDragDetected="#textDragDetect"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/btImagem.png"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="lineButtom" fitHeight="30.0" fitWidth="100.0" onDragDetected="#textDragDetect"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/images/btLinha.png"/>
+                    </image>
+                </ImageView>
+                <HBox>
+                    <fx:define>
+                        <ToggleGroup fx:id="group1"/>
+                        <Insets fx:id="insets1" left="10" right="10" top="10" bottom="10"></Insets>
+                    </fx:define>
+                    <RadioButton fx:id="portrait" selected="true" toggleGroup="$group1" HBox.margin="$insets1" onMouseClicked="#setPortrait">Retrato</RadioButton>
+                    <RadioButton toggleGroup="$group1" HBox.margin="$insets1" onMouseClicked="#setLandscap">Paisagem</RadioButton>
+                </HBox>
+
+
+            </items>
+        </ToolBar>
+        <ScrollPane GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" GridPane.rowIndex="1" onKeyPressed="#keyPressed">
+            <Group>
+                <TextField fx:id="textField" prefWidth="60" prefHeight="60" onInputMethodTextChanged="#textFieldChanged"></TextField>
+                <TextArea fx:id="textArea" prefWidth="60" prefHeight="60" onInputMethodTextChanged="#textAreaChanged"></TextArea>
+                <VBox>
+                    <Canvas fx:id="painelA" onDragOver="#bandDragOver" onDragDropped="#bandDragDroped" onDragDetected="#bandDragDetected" onMouseClicked="#bandClicked"  />
+                    <Canvas fx:id="painelB" onDragOver="#bandDragOver" onDragDropped="#bandDragDroped" onDragDetected="#bandDragDetected" onMouseClicked="#bandClicked"  />
+                </VBox>
+            </Group>
+        </ScrollPane>
+    </children>
+</GridPane>

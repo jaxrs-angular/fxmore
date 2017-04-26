@@ -1,0 +1,15 @@
+.painelA{
+    -fx-background-color: honeydew;
+    -fx-background-image: url(/src/main/resources/images/lbPainelA.png);
+    -fx-background-position: top right;
+    -fx-background-repeat: no-repeat;
+    -fx-background-insets: -10px -10px;
+}
+
+.painelB{
+    -fx-background-color: aliceblue;
+    -fx-background-image: url(/src/main/resources/images/lbPainelB.png);
+    -fx-background-position: top right;
+    -fx-background-repeat: no-repeat;
+    -fx-background-insets: -10px -10px;
+}
